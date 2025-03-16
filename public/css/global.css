@@ -1,0 +1,28 @@
+:root {
+    --primary: #309689;
+    --white: #ffffff;
+  }
+
+* {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .button-default{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .text-white{
+    color: var(--white);
+  }
+  .text-primary{
+    color: var(--primary);
+  }
+  .text-center{
+    text-align: center;
+  }
+  
