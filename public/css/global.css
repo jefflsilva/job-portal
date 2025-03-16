@@ -1,6 +1,7 @@
 :root {
     --primary: #309689;
     --white: #ffffff;
+    --grey: #979797;
   }
 
 * {
@@ -25,4 +26,24 @@
   .text-center{
     text-align: center;
   }
+  
+
+  .d-flex{
+    display: flex;
+  }
+  .align-items-center{
+    align-items: center;
+  }
+  .justify-content-center{
+    justify-content: center;
+  }
+  .border-none{
+    border: none;
+  }
+
+  .input-default {
+    padding: 10px 20px;
+  }
+
+  
   
