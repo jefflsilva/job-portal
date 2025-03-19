@@ -19,8 +19,8 @@
       </ul>
     </div>
     <div class="navbar-end">
-      <TextButton label="Sign Up" />
-      <PrimaryButton label="Login" />
+      <TextButton label="Login" />
+      <PrimaryButton label="Register" />
     </div>
   </nav>
 </template>
@@ -29,11 +29,10 @@
 import { ref, watch } from "vue";
 import { useRoute, useRouter } from "#imports";
 import TextButton from "./text-button.vue";
-import { NuxtLink } from "#components";
+
 const icon = ref("mdi:briefcase-search");
 const route = useRoute();
 const router = useRouter();
-
 const activeTab = ref(route.query.tab || "");
 const routes = ref([
   {
@@ -115,5 +114,20 @@ watch(
   color: white;
   cursor: pointer !important;
   text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 2rem;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-end {
+    display: flex;
+    gap: 1rem;
+  }
 }
 </style>

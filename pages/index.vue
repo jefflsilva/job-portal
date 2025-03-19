@@ -6,7 +6,7 @@
         <p class="text-center">
           Connecting Talent with Opportunity: Your Gateway to Career Success
         </p>
-        <div class="d-flex justify-content-center inputs-wrapper">
+        <div class="inputs-wrapper">
           <input
             v-model="inputValue"
             placeholder="Job Title or Company"
@@ -34,22 +34,28 @@
             <option>B</option>
             <option>C</option>
           </select>
-          <span
-            class="d-flex align-items-center justify-content-center button-search"
-          >
+          <span class="button-search">
             <Icon name="mdi-search" />Search Job
           </span>
         </div>
       </div>
     </div>
-    <div class="footer-section">logos</div>
+    <div class="footer-section">
+      <NuxtImg src="/images/logo_spotify.png" />
+      <NuxtImg src="/images/logo_slack.png" />
+      <NuxtImg src="/images/logo_adobe.png" />
+      <NuxtImg src="/images/logo_asana.png" />
+      <NuxtImg src="/images/logo_linear.png" />
+    </div>
   </section>
 </template>
+
 <script lang="ts" setup>
 const selectedLocation = ref("");
 const selectedCategory = ref("");
 const inputValue = ref("");
 </script>
+
 <style scoped>
 .hero-section {
   min-height: calc(100vh - 64px);
@@ -60,6 +66,8 @@ const inputValue = ref("");
 .hero-section h1 {
   font-size: 80px;
   margin-bottom: 16px;
+  text-align: center;
+  text-wrap: wrap;
 }
 
 .main-section {
@@ -72,18 +80,24 @@ const inputValue = ref("");
 .footer-section {
   background: black;
   height: 128px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-
+.footer-section img {
+  width: 140px;
+}
 .inputs-wrapper {
   margin: 0 auto;
   padding: 0;
-  width: 100%;
+  width: 80%;
   height: 80px;
   background-color: var(--white);
-  width: 80%;
   border-radius: 16px 0 0 16px;
   margin-top: 54px;
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .button-search {
@@ -91,6 +105,9 @@ const inputValue = ref("");
   min-width: 200px;
   border-radius: 0 16px 16px 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-input {
@@ -98,13 +115,44 @@ const inputValue = ref("");
   font-size: 1rem;
   color: var(--grey);
 }
+
 .custom-input::placeholder {
   color: var(--grey);
 }
+
 .custom-input:not(:first-child) {
   margin-right: 16px;
 }
+
 .custom-input:first-child {
   border-radius: 16px 0 0 16px;
+}
+
+@media (max-width: 1024px) {
+  .hero-section h1 {
+    font-size: 40px;
+  }
+
+  .inputs-wrapper {
+    flex-direction: column;
+    height: auto;
+    border-radius: 16px;
+    padding: 36px;
+  }
+
+  .custom-input:first-child {
+    border-radius: 0;
+  }
+
+  .custom-input:not(:first-child) {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .button-search {
+    border-radius: 16px;
+    margin-top: 24px;
+    padding: 18px 30px;
+  }
 }
 </style>
