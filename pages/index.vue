@@ -14,7 +14,6 @@
             class="input-default border-none custom-input"
           />
           <CustomDivider />
-
           <select
             v-model="selectedLocation"
             class="input-default border-none custom-input"
@@ -29,13 +28,13 @@
             v-model="selectedCategory"
             class="input-default border-none custom-input"
           >
-            <option disabled value="">Select Location</option>
+            <option disabled value="">Select Category</option>
             <option>A</option>
             <option>B</option>
             <option>C</option>
           </select>
           <span class="button-search">
-            <Icon name="mdi-search" />Search Job
+            <Icon name="mdi:magnify" />Search Job
           </span>
         </div>
       </div>
@@ -67,7 +66,7 @@ const inputValue = ref("");
   font-size: 80px;
   margin-bottom: 16px;
   text-align: center;
-  text-wrap: wrap;
+  text-wrap: balance;
 }
 
 .main-section {
@@ -77,16 +76,10 @@ const inputValue = ref("");
   align-items: center;
 }
 
-.footer-section {
-  background: black;
-  height: 128px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.text-white {
+  color: white;
 }
-.footer-section img {
-  width: 140px;
-}
+
 .inputs-wrapper {
   margin: 0 auto;
   padding: 0;
@@ -128,6 +121,21 @@ const inputValue = ref("");
   border-radius: 16px 0 0 16px;
 }
 
+.footer-section {
+  background: black;
+  height: 128px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.footer-section img {
+  width: 140px;
+  height: auto;
+}
+
 @media (max-width: 1024px) {
   .hero-section h1 {
     font-size: 40px;
@@ -138,6 +146,7 @@ const inputValue = ref("");
     height: auto;
     border-radius: 16px;
     padding: 36px;
+    width: 90%;
   }
 
   .custom-input:first-child {
@@ -153,6 +162,22 @@ const inputValue = ref("");
     border-radius: 16px;
     margin-top: 24px;
     padding: 18px 30px;
+  }
+
+  .footer-section {
+    height: auto;
+    justify-content: space-around;
+  }
+
+  .footer-section img {
+    width: 100px;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-section img {
+    width: 80px;
   }
 }
 </style>
